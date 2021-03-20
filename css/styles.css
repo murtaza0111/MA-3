@@ -1,0 +1,391 @@
+/* We will not use universal selector for giving our default design because it is generally considered
+ as the cause to slow down the process of loadinng the web page.  */
+
+/* ======================
+   ==  1. HTML or html ==
+   ====================== */
+
+html {
+  /* By default the font size in a web browser is 16px and when we multiply 16px * 62.5 = 10px = 1rem = */
+  font-size: 62.5%;
+  /* helps to better format boxes like divs and set the width margin and padding */
+  box-sizing: border-box;
+}
+
+/* =======================
+   ==  2. BODY or body  ==
+   ======================= */
+
+body {
+  /* 1.6 rem = 16px */
+  font-size: 1.6rem "Roboto Slab";
+  font-family: "Roboto Slab";
+  /* helps to better format boxes like divs and set the width margin and padding */
+  box-sizing: border-box;
+  /* vh = viewport height*/
+  height: 100vh;
+  /* to eradicate the problem of default margins or padding 
+      of  any  tag or  element in a html document in browser */
+  padding: 0;
+  margin: 0;
+}
+
+/* ===============================
+   ==  3. anchor tags or links  ==
+   =============================== */
+
+a {
+  color: #203040;
+  cursor: pointer;
+  text-decoration: none;
+  /* font-weight    : bold; */
+  font-size: 1.6rem;
+}
+
+a:hover {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.secondaryText {
+  color: grey;
+}
+
+/* ================================================
+   ==  4. Background color of footer and header  ==
+   ================================================ */
+
+.back {
+  background-color: #999900;
+}
+
+/* ===================
+   ==  5. CSS GRID  ==
+   =================== */
+
+.grid-container {
+  display: grid;
+  grid-template-areas: "header" "main" "footer";
+  grid-template-columns: 1fr;
+  /* fr stands for fragment*/
+  grid-template-rows: 15rem 1fr 5rem;
+  /* Their are 3 rows which are 
+        header whose height is 10rem = 100px
+        main whose height is 1 fragment
+        footer whose height is 5rem = 50px   */
+  height: 100%;
+  flex-wrap: wrap;
+}
+
+.header {
+  grid-area: header;
+  /* Flex to make the header responsive for all screen sizes */
+  display: flex;
+  /* Space between will cause logo i.e brand and header links to 
+    go away from each other and will have max space between as can get */
+  justify-content: space-between;
+  /* Align Item will cause the logo and links to be in vertically center */
+  align-items: center;
+  padding: 1rem;
+  flex-wrap: wrap;
+  border-bottom: 1px solid black;
+}
+
+/* Header Items or Navbar Items */
+
+.brand {
+  flex-grow: 1;
+}
+
+.header-links {
+  justify-self: flex-end;
+}
+
+.header-links a {
+  padding: 1rem;
+  font-size: 2.2rem;
+}
+
+.cart-img {
+  width: 2.2rem;
+}
+
+.cart-img:hover {
+  width: 3rem;
+}
+
+.main {
+  grid-area: main;
+}
+
+.footer {
+  border-top: 0.1rem solid black;
+  grid-area: footer;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 6rem 0.01rem;
+}
+
+.footer a {
+  font-size: 2rem;
+}
+.footer a:hover {
+  font-weight: 100;
+}
+
+.footer form button {
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+.footer form input {
+  height: 2rem;
+}
+.logo {
+  width: 20rem;
+}
+
+/* Search bar */
+
+.search {
+  border-radius: 10px;
+  background: url("../images/search.png") 0.5rem 0.5rem no-repeat;
+  background-color: #ffffff;
+  height: 2.5rem;
+  padding-left: 2.5rem;
+}
+
+.btn {
+  display: block;
+  background-color: #999900;
+  height: 5rem;
+  font-size: 2rem;
+  text-align: center;
+  padding: 0.5rem;
+  box-shadow: black;
+  cursor: pointer;
+}
+
+/* ======================
+   ==  6. Home Screen  ==
+   ====================== */
+
+.content .heading {
+  text-align: center;
+  font-size: 4rem;
+}
+
+.products {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 100%;
+  flex-wrap: wrap;
+}
+
+.products li {
+
+  flex: 0 1 34rem;
+  /* flex-grow flex-shrink flex-basis */
+  margin: 1rem;
+  height: 60vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+    
+}
+
+.product-image {
+  width: 34rem;
+  height: 34rem;
+}
+
+.product-btn {
+      border: 1px solid grey;
+}
+
+.product-btn:hover
+/* ,.product-btn a  */ {
+  color: #203040;
+  background-color: thistle;
+}
+
+.product-name {
+  font-size: 2rem;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-bottom: 0.5rem;
+}
+
+/* ======================
+   ==  7. Contact Us   ==
+   ====================== */
+
+.contact-us_form {
+  width: 50%;
+  margin: 1rem auto 1rem;
+}
+
+.input {
+  padding: 2rem 0.5rem;
+  margin: 1rem;
+  width: 90%;
+}
+
+.contact-btn {
+  color: #203040;
+  background-color: #999900;
+  width: 93%;
+  text-decoration: none;
+  border: 1px solid black;
+}
+
+.contact-btn:hover {
+  color: white;
+  background-color: grey;
+  width: 93%;
+  text-decoration: none;
+  border: 1px solid black;
+}
+
+.contact-us_form label {
+  margin: 1rem;
+  font-size: 2.5rem;
+}
+
+.heading h6 {
+  margin: 0 1rem 1rem;
+  text-align: justify;
+}
+
+/* ===============
+   ==  8. Cart  ==
+   =============== */
+.checkout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+  
+}
+.checkout li:nth-child(1) {
+  padding-right: 1rem;
+  border-right: 2px solid grey;
+}
+.checkout-items {
+  /* background-color: #999900; */
+}
+
+.checkout-items-img-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40rem;
+  /* padding: 1rem; */
+  flex-wrap: wrap;
+}
+
+.checkout-items-img-title img {
+  width: 20rem;
+  margin: 1rem;
+}
+
+.checkout-items-img-title h2 {
+  flex-grow: 1;
+  padding: 1rem;
+  /* font-size: 1.5rem; */
+}
+.checkout-form-heading {
+  display: flex;
+  direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkout-form-heading input[type="radio"]:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #d1d3d1;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid black;
+}
+
+.checkout-form-heading input[type="radio"]:checked:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 25px;
+  background-color: #999900;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid black;
+}
+
+.payment-btn {
+  background-color: #999900;
+  width: 30%;
+  padding: 6px;
+  cursor: pointer;
+  border-radius: 3rem;
+}
+
+.checkout-form-ecvv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 100%;
+}
+
+.checkout-form-ecvv div {
+  width: 50%;
+}
+.checkout-form-ecvv input {
+ width: 80%;
+}
+/* ===============
+   ==  8. Media Query  ==
+   =============== */
+
+@media (max-width: 500px) {
+  .logo {
+    width: 10rem;
+    /* height: 0.2rem; */
+  }
+  .header-links a {
+    font-size: 1.2rem;
+  }
+  .cart-img {
+    width: 1.5rem;
+  }
+  .cart-img:hover {
+    width: 3rem;
+  }
+  .heading h6 {
+    margin: 0;
+    font-size: 1rem;
+  }
+  .search {
+    background: url("../images/search.png") 0.2rem 0.2rem no-repeat;
+    background-color: #ffffff;
+    height: 1.8rem;
+    padding-left: 2.5rem;
+    display: flex;
+    justify-content: right;
+  }
+}
